@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='1') }}">
-  <title>Users</title>
-</head>
-<body>
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+
   <h1>Users</h1>
   {% if messages %}
   <div  class="flashes">
@@ -24,6 +19,7 @@
       <input type="submit" value="Search" class="link-button"/>
     </form>
     <a href="{{url_for('new_user')}}"><button type="button" class="link-button">Create new user</button></a>
+    <a href="{{url_for('index')}}"><button type="button" class="link-button">Users Cart</button></a>
     <form action="/session/delete" method="post" class="search_form">
       <input type="submit" value="Sign Out" class="link-button">
     </form>
@@ -61,7 +57,5 @@
       {% endfor %}
     </tbody>
   </table>
-</body>
-</html>
 
-
+{% endblock %}

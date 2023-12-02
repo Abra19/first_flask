@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='1') }}">
-  <title>Users</title>
-</head>
-<body>
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+
   <h1>Delete User</h1>
   <p class="confirmation_text">
     Are you sure that you want to delete User? This action cannot be undone.
@@ -21,5 +16,5 @@
     </button>
     <input type="submit" value="Remove" class="remove_user">
   </form>
-</body>
-</html>
+
+  {% endblock %}

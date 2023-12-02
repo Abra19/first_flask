@@ -126,3 +126,43 @@ a:visited {
   font-size: 1.5rem;
   margin: 2.5rem 1.5rem;
 }
+
+.cart {
+  margin-top: 2rem;
+}
+
+.cart_form {
+  display: grid;
+  grid-template-columns: 200px 40px;
+  gap: 50px;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.add-cart-button {
+  padding: 0.5rem 1rem;
+  background-color: chartreuse;
+  border: 1px solid gray;
+  border-radius: 5%;
+  color: black;
+  font-size: 0.75rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.clean-button {
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  background-color: beige;
+  border: 1px solid gray;
+  border-radius: 5%;
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.empty_cart {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+}

@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='1') }}">
-  <title>Users</title>
-</head>
-<body>
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+
   <h1 class="main_title">Welcome to our server for users</h1>
   <button class="link-button">
     <a class="link-style" href="{{ url_for('get_users') }}">List of Users</a>
   </button>
-</body>
-</html>
 
+{% endblock %}

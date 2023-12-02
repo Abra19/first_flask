@@ -1,38 +1,40 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Example application</title>
-  </head>
-  <body>
-    <form action="/cart-items" method="POST">
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+
+  <div class="cart">
+    <form action="/cart-items" method="POST" class="cart_form">
       <input type="hidden" name="item_id" value="1">
-      <input type="hidden" name="item_name" value="One">
-      One
-      <input type="submit" value="Add">
+      <input type="hidden" name="item_name" value="Car">
+      <div>
+        Car
+      </div>
+      <input type="submit" value="+" class="add-cart-button">
     </form>
-    <br>
-    
-    <form action="/cart-items" method="POST">
+  
+    <form action="/cart-items" method="POST" class="cart_form">
       <input type="hidden" name="item_id" value="2">
-      <input type="hidden" name="item_name" value="Two">
-      Two
-      <input type="submit" value="Add">
+      <input type="hidden" name="item_name" value="Palne">
+      Plane
+      <input type="submit" value="+" class="add-cart-button">
     </form>
-    <br>
-    
-    <form action="/cart-items/clean" method="POST">
-      <input type="submit" value="Clean">
-    </form>
-    <br>
-    
+  
+    <h2>Total in cart</h2>
     {% if cart | length == 0 %}
-      <div>Cart is empty</div>
+      <div class="empty_cart">Cart is empty</div>
     {% else %}
       {% for _, item in cart.items() %}
-        <div>
-          {{ item["name"] }}: {{ item["count"] }}
+        <div class="cart_form">
+          <div>{{ item["name"] }}:</div>
+          <div>{{ item["count"] }}</div>
         </div>
       {% endfor %}
     {% endif %}
-  </body>
-</html>
+
+    <form action="/cart-items/clean" method="POST">
+      <input type="submit" value="Clean cart" class="clean-button">
+    </form>
+    <a href="{{url_for('get_users')}}"><button type="button" class="clean-button">Back to Users List</button></a>
+  </div>
+
+{% endblock %}
