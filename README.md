@@ -23,7 +23,12 @@ The data is stored in cookies.
   `make install`
 5. Run on dev server
   `make start_dev`
-6. run om prod server
-  `make start_prod`
 
-### [Try the application](https://simple-real-time-chat.onrender.com/)
+
+### [Try the application](https://first-flask-app-lbov.onrender.com/)
+
+For application's test
+
+Login: tota
+
+Password: password123
