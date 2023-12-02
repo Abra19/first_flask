@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='1') }}">
+  <title>Users</title>
+</head>
+<body>
+  <h1 class="main_title">Login for start work</h1>
+  {% if messages %}
+  <div  class="flashes">
+    {% for category, message in messages %}
+    <div class="{{ category }}">
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <form action="/session/new" method="post" class="create_new_form">
+    <label class="field_new">
+      <div>
+        Login
+      </div>
+      <input type="text" required name="name" value="">
+    </label>
+    <label class="field_new">
+      <div>
+        Password
+      </div>
+      <input type="password" required name="password" value="">
+    </label>
+    <input type="submit" value="Sign In" class="submit_new">
+  </form> 
+</body>
+</html>

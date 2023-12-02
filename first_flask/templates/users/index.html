@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='1') }}">
+  <title>Users</title>
+</head>
+<body>
+  <h1>Users</h1>
+  {% if messages %}
+  <div  class="flashes">
+    {% for category, message in messages %}
+    <div class="{{ category }}">
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="users-staff">
+    <form class="search_form">
+      <input type="search" name="search_form" value="{{ search }}" class="search_field"/>
+      <input type="submit" value="Search" class="link-button"/>
+    </form>
+    <a href="{{url_for('new_user')}}"><button type="button" class="link-button">Create new user</button></a>
+    <form action="/session/delete" method="post" class="search_form">
+      <input type="submit" value="Sign Out" class="link-button">
+    </form>
+  </div>
+
+  <table class="users_table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nickname</th>
+        <th>Email</th>
+        <th>Update user</th>
+        <th class="delete_user">Delete user</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>
+          {{ user['id'] }}
+        </td>
+        <td>
+          {{ user['nickname'] }} 
+        </td>
+        <td>
+          {{ user['email'] }}
+        </td>
+        <td>
+          <a href="{{ url_for('edit_user', id=user['id'])}}">Update user</a>
+        </td>
+        <td class="delete_user">
+          <a href="{{ url_for('delete_user', id=user['id'])}}">Delete user</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
+
+

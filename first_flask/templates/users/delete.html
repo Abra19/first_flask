@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='1') }}">
+  <title>Users</title>
+</head>
+<body>
+  <h1>Delete User</h1>
+  <p class="confirmation_text">
+    Are you sure that you want to delete User? This action cannot be undone.
+  </p>
+  <form
+    action="{{ url_for('delete_user', id=user['id'])}}"
+    method="post"
+    class="create_new_form"
+  >
+    <button class="link-button width_50">
+      <a class="link-style" href="{{ url_for('get_users') }}">List of Users</a>
+    </button>
+    <input type="submit" value="Remove" class="remove_user">
+  </form>
+</body>
+</html>

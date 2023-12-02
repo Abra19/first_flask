@@ -1,0 +1,128 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.main_title {
+  margin: 2rem;
+}
+
+.link-button {
+  padding: 0.5rem 1rem;
+  margin-left: 2rem;
+  background-color: beige;
+  border: 1px solid gray;
+  border-radius: 5%;
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.search_field {
+  height: 3rem;
+  border: 1px solid gray;
+  border-radius: 5%;
+}
+
+.search_form {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+.success {
+  background-color: lightgreen;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.error {
+  background-color: indianred;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.validate_error {
+  color: red;
+  margin: 0.5rem;
+}
+
+.users-staff {
+  display: flex;
+  justify-content: space-between;
+}
+
+.users_table {
+  margin: 2rem 0;
+  border-collapse: collapse;
+  border: 1px solid grey;
+}
+
+.users_table th,td {
+  padding: 10px 15px;
+  border: 1px solid grey;
+}
+
+.create_new_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field_new {
+  display: grid;
+  grid-template-columns: 150px 300px;
+  gap: 15px;
+  font-size: 1.5rem;
+  margin: 1.5rem;
+}
+
+.input_field_new {
+  display: block;
+  border: 1px solid gray;
+  border-radius: 5%;
+}
+
+.submit_new {
+  width: 50%;
+  align-self: flex-start;
+  margin: 1.5rem;
+  font-size: 1.5rem;
+  background-color: beige;
+  border: 1px solid gray;
+  border-radius: 5%;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.delete_user {
+  background-color: indianred;
+}
+
+.remove_user {
+  width: 50%;
+  align-self: flex-start;
+  margin: 1.5rem;
+  font-size: 1.5rem;
+  background-color :indianred;
+  border: 1px solid gray;
+  border-radius: 5%;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: auto;
+}
+
+.width_50 {
+  width: 50%;
+  align-self: flex-start;
+}
+
+.confirmation_text {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  margin: 2.5rem 1.5rem;
+}

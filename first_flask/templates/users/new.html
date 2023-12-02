@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='1') }}">
+  <title>Users</title>
+</head>
+<body>
+  <h1>New User</h1>
+  <form action="{{ url_for('get_users')}}" method="post" class="create_new_form">
+    <div>
+      <label class="field_new">
+        <div>
+          Nickname:
+        </div>
+        <input type="text" name="nickname" value="{{user['nickname']}}" class="input_field_new">
+      </label>
+      {% if errors.get('nickname') %}
+      <div class="validate_error">
+        {{ errors.nickname }}
+      </div>
+      {% endif %}
+    </div>
+    <div>
+      <label class="field_new">
+        <div>
+          Email:
+        </div>
+        <input type="email" name="email" value="{{user['email']}}" class="input_field_new">
+      </label>
+    </div>
+    {% if errors.get('email') %}
+      <div class="validate_error">
+        {{ errors.email }}
+      </div>
+      {% endif %}
+    <input type="submit" value="Submit" class="submit_new">
+  </form>
+</body>
+</html>
